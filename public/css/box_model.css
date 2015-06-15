@@ -1,0 +1,47 @@
+div {
+
+	color: white;
+	width: 172px;
+	height:50px;
+	padding:10px;
+	border:1px solid black
+	
+}
+#red  {
+	
+    margin: px;
+	background-color: red;
+
+}
+
+ #orange{
+ 
+    margin: 30px;
+    background-color: orange;
+
+}
+
+#yellow{
+   
+    margin: 60px;
+	background-color: yellow; 
+}
+
+#green{
+    
+  	margin: 90px;
+	background-color: green;
+}
+
+#blue {
+ 
+   	margin: 120px;
+	background-color: blue;
+}
+
+#hotpink{
+   
+    margin: 150px;
+    background-color: hotpink; 
+}
+

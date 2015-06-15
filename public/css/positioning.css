@@ -1,0 +1,61 @@
+div 
+{
+	color: white;
+	width: 72px;
+	height:50px;
+	padding:11px;
+	border:1px solid black;
+	float: left;
+	margin: 24px;
+}	
+
+.space
+{
+	clear:left;
+}
+
+.codeup
+{
+	position: relative;
+	top:-85px;
+	right: -40px;
+}
+
+
+#red  {
+
+    
+	background-color:red
+	;
+}
+
+ #orange{
+ 
+    
+    background-color: orange;
+
+}
+
+#yellow{
+   
+    
+	background-color: yellow; 
+}
+
+#green{
+    
+  	
+	background-color: green;
+	clear:left;
+}
+
+#blue {
+ 
+   	
+	background-color: blue;
+}
+
+#hotpink{
+    
+    background-color: hotpink; 
+}
