@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Terminator</title>
+    <style>
+        html, body {
+            margin: 0px;
+            padding: 0;
+            margin: 15px;
+        background-image: url('https://hdwallpapers.cat/wallpaper_gray/gray_emergency_phone_in_a_factory_pipes_bricks_hd-wallpaper-1654642.jpg')
+        }
+    </style>
+</head>
+<body>
+
+
+    <p>
+        <button id="btn-move">Move It</button>
+
+        <button id="btn-scale-down">Scale It</button>
+
+        <button id="btn-disappear">Disappear It</button>
+
+        <button id="btn-show">Show It</button>
+
+        <button id="btn-all">Animate all</button>
+    </p>
+
+    <div id="the-terminator" class="him">
+     <img src='http://cs305606.vk.me/v305606388/5814/XZnLHtMXMhk.jpg'>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+
+     
+
+            'use strict';
+$(document).ready(function(){
+    $('#btn-all').click(function(){
+        $('#the-terminator').animate({
+            right:"+=200",
+            opacity: 0.25,
+        })
+
+
+    })
+
+    
+    </script>
+</body>
+</html>

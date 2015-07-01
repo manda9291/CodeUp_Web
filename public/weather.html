@@ -1,0 +1,67 @@
+<DOCTYPE! html>
+<html>
+<head>
+	<title>Weather API</title>
+</head>
+<body>
+	<h1>Weather Example</h1>
+	<div>
+		humidity
+	</div>
+	<div>
+		wind
+	</div>
+	<div>
+		pressure
+	</div>
+
+<scriptsrc=("https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js")></script>
+<script>
+	var ajaxRequest= $.ajax("http://api.openweathermap.org/data/2.5/weather") {
+    APPID: "ad24783d0daad848fc04b7b0098a64ba",
+    q:     "San Antonio, TX"
+});
+
+$ajax.Request.always(function(){
+	console.log('request sent')
+});
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvDWLv1AVX1ooK7L5BnUm24iz-goY__lg"></script>
+
+  <!-- Script to show address on map -->
+  <script type="text/javascript">
+
+    // Set our address to geocode
+    var address = '112 E Pecan St, San Antonio, TX, 78205';
+
+    // Init geocoder object
+    var geocoder = new google.maps.Geocoder();
+
+    // Geocode our address
+    geocoder.geocode( { 'address': address}, function(results, status) {
+      // Check for a successful result
+      if (status == google.maps.GeocoderStatus.OK) {
+        // Set our map options
+        var mapOptions = {
+          // Set the zoom level
+          zoom: 18,
+          // This sets the center of the map at our location
+          center: results[0].geometry.location,
+          // Show this map in satellite view
+          mapTypeId: google.maps.MapTypeId.SATELLITE
+        }
+        // Render the map
+        var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+      } else {
+        // Show an error message with the status if our request fails
+        alert("Geocoding was not successful - STATUS: " + status);
+      }
+    });
+  </script>
+
+
+
+
+
+</script>
+</body>
+</html>
