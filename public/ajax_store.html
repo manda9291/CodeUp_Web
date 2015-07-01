@@ -33,42 +33,47 @@ body {
     </thead>
     <tbody id="insertProducts"></tbody>
 </table>
-<button>Refresh</button>
+<button id="refresh">Refresh</button>
+<button id="clear">Clear all</button>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
 <script>
 (function() {
-    var ajaxRequest=$.get('/data/inventory.json');
+    function updateInventory(){  
 
+        var ajaxRequest = $.get('/data/inventory.json');
 
-    ajaxRequest.always(function(){
-        console.log('Complete')
-    })
-    ajaxRequest.done(function(data){
-        var htmlString="";
+        ajaxRequest.always(function(){
+            console.log('Complete')
+        });
+        ajaxRequest.fail(function(){
+            console.log('There was an error')
+        });
+        ajaxRequest.done(function(data){
+            console.log(data)
+            var htmlString="";
             for(var i=0;i<data.length;i+=1){
-        htmlString +'<tr><td>'+data[i].title='</td></tr>';
+                htmlString += '<tr><td>' + data[i].title + '</td>'
+                            +'<td>' + data[i].quantity + '</td>'
+                            +'<td>' + data[i].price + '</td>'
+                            +'<td>' + data[i].categories + '</td></tr>'
+
+            }
+            $('#insertProducts').html(htmlString)
+        });
     }
-        //$('#insertProducts').html(htmlString)
-    //}
-    //$(document).ready();
-    // TODO: Create an ajax GET request for /data/inventory.json
-        //$.get("data/inventory.json")
-        //console.log('complete');
 
-        //var inventoryRequest = $get("/data/inventory.json"){
-           //inventoryRequest.done(function(data)
-       // var 
-       //)}
-    // TODO: Take the data from inventory.json and append it to the products table
-        //$('table').append($('/data/inventory.json')) s
+    $('#clear').click(function() {
+        $('#insertProducts').html('');
 
+    });
 
-            //$.post("data/inventory.json").done()
-    //       HINT: Your data should come back as a JSON object; use console.log() to inspect
-    //             its contents and fields
-    //       HINT: You will want to target #insertProducts for your new HTML elements
+    $('#refresh').click(function(){
+        console.log("refresh button???");
+        updateInventory();
+    });
+
 })();
 </script>
 
