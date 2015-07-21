@@ -5,7 +5,6 @@
  <style type="text/css">body {
   padding-top: 45px;
   overflow: hidden!important;
-
 body {
   background: #fafafa url("../imgs/content_inner_bg.png");
   margin: 0;
@@ -41,9 +40,7 @@ body {
 <script>
 (function() {
     function updateInventory(){  
-
         var ajaxRequest = $.get('/data/inventory.json');
-
         ajaxRequest.always(function(){
             console.log('Complete')
         });
@@ -58,22 +55,17 @@ body {
                             +'<td>' + data[i].quantity + '</td>'
                             +'<td>' + data[i].price + '</td>'
                             +'<td>' + data[i].categories + '</td></tr>'
-
             }
             $('#insertProducts').html(htmlString)
         });
     }
-
     $('#clear').click(function() {
         $('#insertProducts').html('');
-
     });
-
     $('#refresh').click(function(){
         console.log("refresh button???");
         updateInventory();
     });
-
 })();
 </script>
 

@@ -4,32 +4,43 @@
 	<title>Weather API</title>
 </head>
 <body>
+	<tbody id='current_weather'></tbody>
 	<h1>Weather Example</h1>
-	<div>
-		humidity
-	</div>
-	<div>
-		wind
-	</div>
-	<div>
-		pressure
-	</div>
-
-<scriptsrc=("https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js")></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script>
-	var ajaxRequest= $.ajax("http://api.openweathermap.org/data/2.5/weather") {
-    APPID: "ad24783d0daad848fc04b7b0098a64ba",
-    q:     "San Antonio, TX"
+(function(){
+	var ajaxRequest= $.get("http://api.openweathermap.org/data/2.5/weather", {
+    	APPID: "ad24783d0daad848fc04b7b0098a64ba",
+    	q:     "San Antonio, TX",
+    	units: "imperial"
+	});
+
+ajaxRequest.always(function(){
+	console.log('request sent');
+});
+ajaxRequest.fail(function(data, error){
+	console.log(ajaxRequest.statusText);
+	console.log(ajaxRequest.statusText);
+	console.log(ajaxRequest.status);
 });
 
-$ajax.Request.always(function(){
-	console.log('request sent')
+ajaxRequest.done(function(data){
+	console.log(data);
+	var htmlString ='';
+	var maxTemp = data.main.temp_max;
+	var minTemp = data.main.temp_min;
+	var humidity = data.main.humidity;
+	var pressure = data.main.pressure;
+	var description = data.weather[0].description;
+
+htmlString = '<p> Weather is currently ' + description + '</p>'				+ 'Low of: ' + minTemp
+				+ 'High of: ' + maxTemp
+				+ 'Humidity: ' + humidity
+				+ 'Pressure: ' + pressure;
+	$('#current_weather').html(htmlString);
 });
 
-
-
-
-
+});
 
 </script>
 </body>
