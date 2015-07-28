@@ -1,8 +1,8 @@
 <?php
 
 
-function pageController()
-{
+//function pageController()
+//{
     $adjectivess= ['Small', 'Smart', 'Big-O-', 'Unique', 'Fast', 'Clean', 'Cool', 'Cold', 'Mysterious', 'scary' ];
     $nouns = ['Dog', 'Jane', 'Baby', 'Car', 'Fly', 'Tree', 'Kitties', 'Ant', 'Taco', 'Pizza' ];
     // Initialize an empty data array.
@@ -10,12 +10,12 @@ function pageController()
 
     // Add data to be used in the html view.
     // Return the completed data array.
-    $data['severName']= random($adjectives) . " " . random($nouns);
+    $data['severName']= random($adjectivess) . " " . random($nouns);
     return $data;    
-}
+//}
 
 // Call the pageController function and extract all the returned array as local variables.
-extract(pageController());
+//extract(pageController());
 
 
 
@@ -38,6 +38,7 @@ function random($array){
 </head>
 <body>
 <h1><?= $adjectivess ?></h1>
+<h1><?= $nouns ?></h1>
 
 
 </body>

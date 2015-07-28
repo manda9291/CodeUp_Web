@@ -16,6 +16,11 @@
 	}else{ 
 		$counter=0;
 	}
+	
+requre_once
+
+Input::has()
+Input::get()
 
 //extract(pageController);
 //return pageController;

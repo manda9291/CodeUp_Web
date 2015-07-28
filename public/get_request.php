@@ -1,19 +1,20 @@
-<?php
-	var_dump($_GET);
-	$name='Amanda';
-?>
 
+<?php
+//ALL EXAMPLES
+$name = isset($_POST['name']) ? $_POST['name'] : '';
+$number = isset($_POST['number']) ? $_POST['number'] : '';
+?>
+<!DOCTYPE html>
 <html>
 <head>
-	<title>GET Requests</title>
+    <title>POST Example</title>
 </head>
 <body>
-	<a href="?name=<?=$name;?>">My name</a>
-	
-<form method="GET" action="https://duckduckgo.com/">
-    <input type="text" name="q" value="" placeholder="Search DuckDuckGo">
-    <button type="submit">Go!</button>
-</form>
-
+    <h2>Name</h2>
+    <p><?php echo $name; ?></p>
+    <h2>Number</h2>
+    <p><?php echo $number; ?></p>
+    <a href="form-example.php">Back</a>
+    
 </body>
 </html>
